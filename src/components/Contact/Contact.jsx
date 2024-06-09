@@ -1,5 +1,7 @@
 import { useDispatch } from "react-redux";
-import { deleteContact } from "../../redux/contactsSlice";
+import { deleteContact } from "../../redux/contactsOps";
+import { FaUser } from "react-icons/fa";
+import { MdPhone } from "react-icons/md";
 import css from "./Conntact.module.css";
 
 const Contact = ({ contact: { name, number, id } }) => {
@@ -10,8 +12,14 @@ const Contact = ({ contact: { name, number, id } }) => {
   return (
     <>
       <div className={css.dscr}>
-        <h3>{name}</h3>
-        <p>{number}</p>
+        <div className={css.row}>
+          <FaUser />
+          <h3>{name}</h3>
+        </div>
+        <div className={css.row}>
+          <MdPhone />
+          <p>{number}</p>
+        </div>
       </div>
       <button onClick={handleDelete} type="button">
         Delete

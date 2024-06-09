@@ -5,6 +5,7 @@
 }
 
 .item {
+  flex-basis: calc((100% - 32px) / 3);
   display: flex;
 
   border: 1px solid grey;
